@@ -1,1 +1,410 @@
+body,html{
+    height: 100%;
+    align-items:center;
+    justify-content: center;
+    background-color: silver;
+}
 
+:root {
+    font-size: 22px;
+    text-align: center;
+    font-family: Arial;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Limelight';
+    font-size: 95px;
+    color: black;
+}
+
+.highlight-word-color1{
+    color: #d1a746;
+    text-align: center;
+    font-family: 'Limelight';
+    font-size: 95px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Limelight';
+    font-size: 40px;
+    color: black;
+}
+
+.highlight-word-color2{
+    color: #d1a746;
+    text-align: center;
+    font-family: 'Limelight';
+    font-size: 40px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 85%;
+    width: 85%;
+    height: 520px;
+    margin: 0px auto;
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px 2px;
+    overflow: hidden;
+}
+
+.container .images {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 90%;
+    top: 0;
+    left: 0;
+    transition: 250ms;
+}
+
+.container .images img {
+    max-width: 1000px;
+    width: auto;
+    position: relative;
+    margin-right: 10px;
+}
+
+.container .buttons {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: 0;
+}
+
+.container .buttons  i {
+    font-size: 23px;
+    color: black;
+    justify-content: center;
+}
+ 
+.container iframe {
+    width: 95%;
+    height: 415px;
+}
+  
+  @media screen and (max-width: 600px) {
+    .container {
+      max-width: 85%;
+    }
+    .container iframe {
+      width: 85%;
+      height: 225px;
+    }
+}
+  
+  @media screen and (max-width: 400px) {
+    .container {
+      max-width: 80%;
+    }
+    .container iframe {
+      width: 75%;
+      height: 150px;
+    }
+}
+
+.container .previous,
+.next {
+  width: 2%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.container .previous {
+    margin-left: 0px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    .container .previous,
+    .container .next {
+      width: 6%;
+    }
+  
+    .container .buttons i {
+      font-size: 20px;
+    }
+  
+    .container .images {
+      height: 60%;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .container .previous,
+    .container .next {
+      width: 20%;
+    }
+  
+    .container .buttons i {
+      font-size: 20px;
+    }
+  
+    .container .images {
+      height: 50%;
+    }
+  }
+
+  .modal {
+    width: 700px;
+    height: 520px;
+    max-width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 300ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    overflow: scroll;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+  
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+  
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+  
+.modal-body {
+    padding: 10px 15px;
+}
+  
+.overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+@media screen and (max-width: 600px) {
+  .modal {
+    width: 90%;
+    height: 65%;
+    max-width: none;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+  
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#comment-section {
+    width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.comment-submit-button {
+    background-color: white;
+    color: black;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+  }
+
+textarea {
+    width: 650px;
+    resize: none;
+    height: 150px;
+    font-size: 18px;
+    text-align: left;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+  #comment-section {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 18px;
+  }
+  
+  textarea {
+    width: 95%;
+    resize: none;
+    height: 150px;
+    font-size: 18px;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .comment-submit-button {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+  }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 175px;
+    background-color: silver;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#container {
+    border: 1px solid black;
+    height: 500px;
+    width: 900px;
+    margin: 0px auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#btn {
+    border-radius: 10px;
+    padding: 5px;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    height: 65px;
+    width: 150px;
+    font-size: 23px;
+    cursor: pointer;
+
+}
+
+#output {
+    margin: 25px auto;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.element1 {
+    height: 500px;
+    width: 700px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.element2 {
+    height: 500px;
+    width: 700px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .btn-grid {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+.btn {
+    border-radius: 10px;
+    padding: 5px;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    height: 65px;
+    width: 150px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border-color: white;
+}
+
+.btn.correct {
+    background-color: rgb(71, 255, 71);
+}
+  
+.btn.wrong {
+    background-color: red;
+}
+
+.start-btn, .next-btn {
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 23px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
